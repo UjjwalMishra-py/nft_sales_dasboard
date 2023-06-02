@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./static/css/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.0/dist/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" />
+
+    <title>NFT Dashboard</title>
+</head>
+
+<body>
+    <div class="dashboard-container flex">
+        <div class="sidebar-container flex">
+            <div class="logo-container flex">
+                <i class="icon-logo"><span class="path1"></span><span class="path2"></span><span
+                        class="path3"></span><span class="path4"></span><span class="path5"></span></i>
+            </div>
+            <div class="sidebar-btns flex">
+                <div class="btn-grp flex">
+                    <button id="speedo" class="btn active flex">
+                        <div class="color red"></div>
+                        <div class="content">
+                            <div><i class="icon-speedometer active"></i></div>
+                        </div>
+                    </button>
+                    <button id="home" class="btn flex">
+                        <div class="color"></div>
+                        <div class="content">
+                            <div><i class="icon-home"></i></div>
+                        </div>
+                    </button>
+                    <button id="pie" class="btn flex">
+                        <div class="color"></div>
+                        <div class="content">
+                            <div><i class="icon-pie"></i></div>
+                        </div>
+                    </button>
+                    <button class="btn flex">
+                        <div class="color"></div>
+                        <div class="content">
+                            <div><i class="icon-toolbox"></i></div>
+                        </div>
+                    </button>
+                    <button class="btn flex">
+                        <div class="color"></div>
+                        <div class="content">
+                            <div><i class="icon-calender-done"></i></div>
+                        </div>
+                    </button>
+                    <button class="btn flex">
+                        <div class="color"></div>
+                        <div class="content">
+                            <div><i class="icon-settings"></i></div>
+                        </div>
+                    </button>
+                </div>
+                <button class="power-btn btn">
+                    <i class="icon-power"></i>
+                </button>
+            </div>
+        </div>
+        <div class="main-container flex">
+            <div class="topbar flex">
+                <div class="title flex">Dashboard</div>
+                <div class="topbar-right flex">
+                    <button class="btn notifications">
+                        <span class="dot dummy"></span><img src="./static/images/bell.svg" alt="" />
+                    </button>
+                    <button class="profile btn flex">
+                        <img src="./static/images/Azukii.jpeg" alt="" />
+                        <p>Ujjwal Mishra</p>
+                    </button>
+                </div>
+            </div>
+            <div class="lower-container flex">
+                <div class="cards-toppicks-container flex">
+                    <div class="cards section flex">
+                        <div class="section-title flex">
+                            <p>My Cards</p>
+                        </div>
+                        <div class="card-container flex">
+                            <div class="card mycard text-white">
+                                <p class="balance">balance</p>
+                                <h3 class="amount">$521.652</h3>
+                                <p class="">Monthly Profit</p>
+                                <div class="bottom flex">
+                                    <span class="profit"> $142.25 </span>
+                                    <div class="tag">
+                                        <p>+10%</p>
+                                    </div>
+                                </div>
+                                <img class="top-circle" src="./static/images/top-circle.png" height="75px" width="75px"
+                                    alt="" />
+                                <img class="bottom-circle" src="./static/images/bottom-circle.png " height="75px"
+                                    width="75px" alt="" />
+                            </div>
+                            <div class="card mycard-shadow"></div>
+                        </div>
+                        <div class="flex three-dots">
+                            <span>
+                                <div class="active dot"></div>
+                            </span>
+                            <span>
+                                <div class="dot"></div>
+                            </span>
+                            <span>
+                                <div class="dot"></div>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="toppicks section flex">
+                        <div class="section-title flex">
+                            <p>Top Picks</p>
+                            <button class="btn">
+                                <i class="icon-three-dots"></i>
+                            </button>
+                        </div>
+
+                        <div class="pick flex">
+                            <div class="color red"></div>
+                            <div class="content">
+                                <div class="title">Bored Ape</div>
+                                <div class="price flex">
+                                    <div class="usd">$ 19,000</div>
+                                    <div class="eth">0.0000345 Ether</div>
+                                </div>
+                            </div>
+                            <div class="arrow flex">
+                                <img src="./static/images/chevron-right.png" alt="" />
+                            </div>
+                        </div>
+                        <div class="pick flex">
+                            <div class="color yellow"></div>
+                            <div class="content">
+                                <div class="title">Cypto Punks</div>
+                                <div class="price flex">
+                                    <div class="usd">$ 50,000</div>
+                                    <div class="eth">0.0000678 Ether</div>
+                                </div>
+                            </div>
+                            <div class="arrow flex">
+                                <img src="./static/images/chevron-right.png" alt="" />
+                            </div>
+                        </div>
+                        <div class="pick flex">
+                            <div class="color green"></div>
+                            <div class="content">
+                                <div class="title">Pokemon NFT</div>
+                                <div class="price flex">
+                                    <div class="usd">$ 67,000</div>
+                                    <div class="eth">0.0000887 Ether</div>
+                                </div>
+                            </div>
+                            <div class="arrow flex">
+                                <img src="./static/images/chevron-right.png" alt="" />
+                            </div>
+                        </div>
+                        <div class="pick flex">
+                            <div class="color yellow"></div>
+                            <div class="content">
+                                <div class="title">AniME</div>
+                                <div class="price flex">
+                                    <div class="usd">$ 7,000</div>
+                                    <div class="eth">0.0000761 Ether</div>
+                                </div>
+                            </div>
+                            <div class="arrow flex">
+                                <img src="./static/images/chevron-right.png" alt="" />
+                            </div>
+                        </div>
+                        <div class="pick flex">
+                            <div class="color red"></div>
+                            <div class="content">
+                                <div class="title">CryptoChronic</div>
+                                <div class="price flex">
+                                    <div class="usd">$ 76,000</div>
+                                    <div class="eth">0.0000302 Ether</div>
+                                </div>
+                            </div>
+                            <div class="arrow flex">
+                                <img src="./static/images/chevron-right.png" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-container flex">
+
+                    <div class="upper flex">
+                        <div class="featured-sec section flex">
+                            <div class="section-title flex">
+                                <p>NFT Dashboard</p>
+                                <button class="btn">
+                                    <i class="icon-three-dots"></i>
+                                </button>
+                            </div>
+                            <div class="card featured text-white flex">
+                                <div class="featured-row1 flex">
+                                    <button class="text-white tag btn">
+                                        <p>Top Picks</p>
+                                    </button>
+                                    <button class="text-white tag btn">
+                                        <p>Featured</p>
+                                    </button>
+                                </div>
+                                <div class="featured-row2 flex">
+                                    <div class="details-container">
+                                        <p>Capsule House</p>
+                                        <div class="price-stars flex">
+                                            <span><i class="icon-ethereum"></i> </span><span>14.9 Ether</span>
+                                            <i class="icon-star star"></i>
+                                            <i class="icon-star star"></i>
+                                            <i class="icon-star star"></i>
+                                            <i class="icon-star star"></i>
+                                            <i class="icon-star"></i>
+                                        </div>
+                                        <p>(24 Bids)</p>
+                                    </div>
+                                    <div class="profile-icons">
+                                        <span><img class="cam" src="./static/images/camera.png" alt="" /></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="investment section flex">
+                            <div class="section-title flex">
+                                <p>Investment Stats</p>
+                                <button class="btn">
+                                    <i class="icon-three-dots"></i>
+                                </button>
+                            </div>
+                            <div class="card flex">
+                                <div class="investment-stats flex">
+                                    <div class="total investment-container">
+                                        <div class="iconbox">
+                                            <div class="icon">
+                                                <i class="icon-coin"></i>
+                                            </div>
+                                        </div>
+                                        <div class="content">
+                                            <p class="title">Total Investments</p>
+                                            <div class="amount">
+                                                <i class="icon-ethereum"></i>
+                                                <p>0.56 Ether</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="weekly investment-container">
+                                        <div class="iconbox">
+                                            <div class="icon">
+                                                <i class="icon-calendar-icon"></i>
+                                            </div>
+                                        </div>
+                                        <div class="content">
+                                            <p class="title">Weekly Returns</p>
+                                            <div class="amount">
+                                                <i class="icon-ethereum"></i>
+                                                <p>0.005 Ether</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="expenses investment-container">
+                                        <div class="iconbox">
+                                            <div class="icon">
+                                                <i class="icon-dollar-icon"></i>
+                                            </div>
+                                        </div>
+                                        <div class="content">
+                                            <p class="title">Expenses</p>
+                                            <div class="amount">
+                                                <i class="icon-ethereum"></i>
+                                                <p>0.005 Ether</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="investment-bars flex">
+                                    <div class="guides flex">
+                                        <div class="line"></div>
+                                        <div class="line"></div>
+                                        <div class="line"></div>
+                                        <div class="line"></div>
+                                        <div class="line"></div>
+                                    </div>
+                                    <div class="rotation-box flex">
+                                        <div class="prog-bar-full">
+                                            <div class="prog-bar-complete red"></div>
+                                        </div>
+                                        <div class="prog-bar-full">
+                                            <div class="prog-bar-complete green"></div>
+                                        </div>
+
+                                        <div class="prog-bar-full">
+                                            <div class="prog-bar-complete yellow"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="minmax flex">
+                                    <p>Max</p>
+                                    <p>Min</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lower flex">
+                        <div class="nft-owned section flex">
+                            <div class="section-title flex">
+                                <p>NFTs owned</p>
+                                <button class="btn">
+                                    <i class="icon-three-dots"></i>
+                                </button>
+                            </div>
+                            <div class="carousel grid">
+                                <div class="carousel-nft card flex">
+                                    <div class="nft-content">
+                                        <p class="nft-title">Bored Ape</p>
+                                        <span class="price">
+                                            <i class="icon-ethereum"></i>
+                                            0.91 Ether
+                                        </span>
+                                    </div>
+                                    <div class="graph-sm">
+                                        <i class="icon-profit"></i>
+                                        <p class="profit">+10%</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-nft card flex">
+                                    <div class="nft-content">
+                                        <p class="nft-title">Azuki</p>
+                                        <span class="price">
+                                            <i class="icon-ethereum"></i>
+                                            0.89 Ether
+                                        </span>
+                                    </div>
+                                    <div class="graph-sm">
+                                        <i class="icon-profit"></i>
+                                        <p class="profit">+19%</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-nft card flex">
+                                    <div class="nft-content">
+                                        <p class="nft-title">Crypto Punk</p>
+                                        <span class="price">
+                                            <i class="icon-ethereum"></i>
+                                            1.1 Ether
+                                        </span>
+                                    </div>
+                                    <div class="graph-sm">
+                                        <i class="icon-loss"></i>
+                                        <p class="loss">-17%</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-nft card flex">
+                                    <div class="nft-content">
+                                        <p class="nft-title">CryptoChronic</p>
+                                        <span class="price">
+                                            <i class="icon-ethereum"></i>
+                                            0.71 Ether
+                                        </span>
+                                    </div>
+                                    <div class="graph-sm">
+                                        <i class="icon-profit"></i>
+                                        <p class="profit">+22%</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-nft card flex">
+                                    <div class="nft-content">
+                                        <p class="nft-title">Bored Ape</p>
+                                        <span class="price">
+                                            <i class="icon-ethereum"></i>
+                                            0.91 Ether
+                                        </span>
+                                    </div>
+                                    <div class="graph-sm">
+                                        <i class="icon-profit"></i>
+                                        <p class="profit">+10%</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-nft card flex">
+                                    <div class="nft-content">
+                                        <p class="nft-title">The Captainz</p>
+                                        <span class="price">
+                                            <i class="icon-ethereum"></i>
+                                            0.89 Ether
+                                        </span>
+                                    </div>
+                                    <div class="graph-sm">
+                                        <i class="icon-profit"></i>
+                                        <p class="profit">+19%</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-nft card flex">
+                                    <div class="nft-content">
+                                        <p class="nft-title">DeGods</p>
+                                        <span class="price">
+                                            <i class="icon-ethereum"></i>
+                                            1.1 Ether
+                                        </span>
+                                    </div>
+                                    <div class="graph-sm">
+                                        <i class="icon-loss"></i>
+                                        <p class="loss">-17%</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-nft card flex">
+                                    <div class="nft-content">
+                                        <p class="nft-title">Pudgy Penguins</p>
+                                        <span class="price">
+                                            <i class="icon-ethereum"></i>
+                                            0.71 Ether
+                                        </span>
+                                    </div>
+                                    <div class="graph-sm">
+                                        <i class="icon-profit"></i>
+                                        <p class="profit">+22%</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio section flex">
+                            <div class="section-title flex">
+                                <p>My Portfolio</p>
+                                <div class="portfolio-buttons flex">
+                                    <button class="btn round">
+                                        <i class="icon-arrow-left"></i>
+                                    </button>
+                                    <button class="btn round purple">
+                                        <i class="icon-right text-white"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="carousel grid">
+                                <div class="carousel-nft card flex">
+                                    <div class="nft-content">
+                                        <p class="nft-title">CryptoChronic</p>
+                                        <span class="price">
+                                            <i class="icon-ethereum"></i>
+                                            0.005 Ether
+                                        </span>
+                                    </div>
+                                    <div class="graph-sm">
+                                        <img src="./static/images/Crypto.jpg" alt="" />
+                                    </div>
+                                </div>
+                                <div class="carousel-nft card flex">
+                                    <div class="nft-content">
+                                        <p class="nft-title">HeavenComputer</p>
+                                        <span class="price">
+                                            <i class="icon-ethereum"></i>
+                                            0.076 Ether
+                                        </span>
+                                    </div>
+                                    <div class="graph-sm">
+                                        <img src="./static/images/HeavenComputers.jpeg " />
+                                    </div>
+                                </div>
+                                <div class="carousel-nft card flex">
+                                    <div class="nft-content">
+                                        <p class="nft-title">Moonbirds</p>
+                                        <span class="price">
+                                            <i class="icon-ethereum"></i>
+                                            0.005 Ether
+                                        </span>
+                                    </div>
+                                    <div class="graph-sm">
+                                        <img src="./static/images/Moonbirds.webp" />
+                                    </div>
+                                </div>
+                                <div class="carousel-nft card flex">
+                                    <div class="nft-content">
+                                        <p class="nft-title">Bored Ape</p>
+                                        <span class="price">
+                                            <i class="icon-ethereum"></i>
+                                            0.91 Ether
+                                        </span>
+                                    </div>
+                                    <div class="graph-sm">
+                                        <img src="./static/images/BoardApe.jpg" alt="" />
+                                    </div>
+                                </div>
+                                <div class="carousel-nft card flex">
+                                    <div class="nft-content">
+                                        <p class="nft-title">ON1 Force</p>
+                                        <span class="price">
+                                            <i class="icon-ethereum"></i>
+                                            0.91 Ether
+                                        </span>
+                                    </div>
+                                    <div class="graph-sm">
+                                        <img src="./static/images/O1Force.jpg" alt="" />
+                                    </div>
+                                </div>
+                                <div class="carousel-nft card flex">
+                                    <div class="nft-content">
+                                        <p class="nft-title">Doodles</p>
+                                        <span class="price">
+                                            <i class="icon-ethereum"></i>
+                                            0.91 Ether
+                                        </span>
+                                    </div>
+                                    <div class="graph-sm">
+                                        <img src="./static/images/Doodles.jpg" alt="" />
+                                    </div>
+                                </div>
+                                <div class="carousel-nft card flex">
+                                    <div class="nft-content">
+                                        <p class="nft-title">The Potatoz</p>
+                                        <span class="price">
+                                            <i class="icon-ethereum"></i>
+                                            0.91 Ether
+                                        </span>
+                                    </div>
+                                    <div class="graph-sm">
+                                        <img src="./static/images/Potatoes.png" alt="" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="distros grid">
+                                <div class="section-title flex">Market Cap</div>
+                                <div class="bg-graph flex">
+                                    <canvas class="" id="line-chart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./index.js"></script>
+</body>
+
+</html>

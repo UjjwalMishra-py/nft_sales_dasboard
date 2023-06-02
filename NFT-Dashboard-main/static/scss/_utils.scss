@@ -1,0 +1,133 @@
+@import "./fonts", "./variables";
+
+.text-dark {
+  color: #272727;
+}
+.text-white {
+  color: white;
+}
+
+.flex {
+  display: flex;
+}
+.grid {
+  display: grid;
+}
+.btn {
+  border: 0;
+  background-color: transparent;
+  justify-content: center;
+  cursor: pointer;
+
+  .icon-three-dots {
+    font-size: 4px;
+  }
+}
+.round {
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0px -11.6375px 37.3625px rgba(0, 0, 0, 0.03);
+  padding: 5%;
+  height: 100%;
+  aspect-ratio: 1/1;
+}
+.card {
+  padding: 10px;
+  background: white;
+  box-shadow: 0px -11.6375px 37.3625px rgba(0, 0, 0, 0.03);
+  border-radius: 4.9px;
+  justify-content: space-between;
+
+  // #{&}-xl {
+  //   height: 158.02px;
+  //   width: 276.85px;
+  // }
+}
+.circle {
+  border-radius: 50%;
+  height: 75px;
+  width: 75px;
+}
+.dot {
+  position: absolute;
+  height: 5px;
+  width: 5px;
+  background-color: $red;
+  border-radius: 50%;
+  display: block;
+}
+.profit {
+  color: $green;
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 7.35px;
+  line-height: 9px;
+  text-align: center;
+}
+.loss {
+  color: $red;
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 7.35px;
+  line-height: 9px;
+  text-align: center;
+}
+.star {
+  color: #f7e08e;
+}
+.section {
+  display: flex;
+  flex-direction: column;
+}
+.section-title {
+  padding-top: 5px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 11.025px;
+  line-height: 13px;
+  text-align: justify;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+
+.tag {
+  display: flex;
+  background: rgba(255, 255, 255, 0.23);
+  backdrop-filter: blur(71.05px);
+  border-radius: 20px;
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 7.35px;
+  line-height: 9px;
+  text-align: center;
+  padding: 0 5px;
+  justify-content: center;
+  align-items: center;
+  p {
+    padding: 4px;
+  }
+}
+
+.red {
+  background: $red;
+}
+.yellow {
+  background: $yellow;
+}
+.green {
+  background: $green;
+}
+.color {
+  min-width: 3px;
+  border-radius: 3px;
+}
+
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}

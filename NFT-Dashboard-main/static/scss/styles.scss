@@ -1,0 +1,693 @@
+@import "./resets", "./utils", "./fonts", "./variables", "./glyphs";
+
+html {
+  overflow: hidden;
+  transform: scale(1.4);
+  font-family: "Raleway", sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  display: flex;
+  max-width: 100vw;
+  max-height: 100vh;
+  background: linear-gradient(90deg, #dfd7ff 0%, #c5b7ff 100%);
+  justify-content: center;
+  align-items: center;
+}
+
+.dashboard-container {
+  margin: 52px 38px 90px;
+  min-width: 882px;
+  max-height: 552px;
+  background: $bg-color;
+  box-shadow: 4px 4px 25px rgba(0, 0, 0, 0.13);
+  border-radius: 9.8px;
+
+  .sidebar-container {
+    flex-basis: 70px;
+    border-right: 2.45px solid $border-color;
+    border-radius: 9.8px 0 0 9.8px;
+    background: #ffffff;
+    flex-direction: column;
+
+    .logo-container {
+      flex-basis: 50px;
+      min-width: 70px;
+      max-height: 50px;
+      align-items: center;
+      justify-content: center;
+    }
+    .sidebar-btns {
+      width: 100%;
+      height: 100%;
+      flex-direction: column;
+      justify-content: space-between;
+      .power-btn {
+        color: #7942fb;
+        padding: 15px 0;
+        i {
+          font-size: 14px;
+        }
+      }
+      .btn-grp {
+        @include flexCenter(column);
+        width: 100%;
+        .red {
+          display: flex;
+        }
+        .active {
+          color: #7942fb !important;
+        }
+        i {
+          color: #959595;
+          font-size: 14px;
+        }
+        button {
+          position: relative;
+          justify-content: space-between;
+          width: 100%;
+          min-height: 25px;
+          padding: 10px 0;
+          align-items: center;
+          .content {
+            display: flex;
+            justify-content: center;
+            flex: 1;
+          }
+          .color {
+            position: absolute;
+            left: 0%;
+            min-height: 30px;
+          }
+        }
+      }
+      .power-btn:hover {
+        stroke-width: 5px;
+        font-weight: 900;
+      }
+    }
+  }
+  .main-container {
+    flex: 1;
+    flex-direction: column;
+
+    .topbar {
+      flex-basis: 50px;
+      background: #ffffff;
+      border-bottom: 2.45px solid $border-color;
+      border-radius: 0 9.8px 0 0;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 $padding;
+
+      .title {
+        font-family: "Raleway";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14.7px;
+        line-height: 1.7;
+        text-align: justify;
+        align-items: center;
+        color: #5c5c5c;
+      }
+      #{&}right {
+        flex-direction: row;
+      }
+      .notifications {
+        position: relative;
+
+        .dot {
+          position: absolute;
+          left: 60%;
+          top: 40;
+        }
+      }
+
+      .profile {
+        align-items: center;
+        justify-content: flex-end;
+        margin: 0 32px;
+        img {
+          margin: 8px;
+          height: 20px;
+          width: 20px;
+        }
+        p {
+          font-family: "Mulish";
+          font-style: normal;
+          font-weight: 600;
+          font-size: 8.575px;
+          line-height: 11px;
+          text-align: right;
+
+          color: #959595;
+        }
+      }
+    }
+    .lower-container {
+      flex-direction: row-reverse;
+      height: calc(100% - 50px);
+      .cards-toppicks-container {
+        padding: $padding;
+        gap: $gap;
+        max-height: min-content;
+        flex-basis: 212.54px;
+        background: #ffffff;
+        border-left: 2.45px solid $border-color;
+        border-top: 0;
+        border-radius: 0 0 9.8px 0;
+        flex-direction: column;
+        flex-grow: 1;
+        .cards {
+          position: relative;
+          .card-container {
+            position: relative;
+            justify-content: center;
+            padding-bottom: 15px;
+            overflow: hidden;
+            .mycard {
+              @include flexCenter(column);
+              align-items: flex-start;
+              justify-content: space-between;
+              position: relative;
+              min-width: 177.01px;
+              min-height: 108.41px;
+              z-index: 1;
+              background: linear-gradient(
+                68.24deg,
+                #7942fb -3.47%,
+                #b091f9 103.83%
+              );
+              .amount {
+                font-family: "Mulish";
+                font-style: normal;
+                font-weight: 800;
+                font-size: 22.05px;
+                line-height: 28px;
+                text-align: justify;
+              }
+              .balance {
+                border-radius: 7.35px;
+                font-family: "Raleway";
+                font-style: normal;
+                font-weight: 600;
+                font-size: 8.575px;
+                line-height: 10px;
+                text-align: justify;
+              }
+              .bottom {
+                width: 100%;
+                justify-content: space-between;
+                .profit {
+                  font-family: "Mulish";
+                  font-style: normal;
+                  font-weight: 600;
+                  font-size: 14.7px;
+                  line-height: 18px;
+                  text-align: justify;
+                  color: white;
+                }
+              }
+              .top-circle {
+                position: absolute;
+                top: 0;
+                right: 0;
+              }
+              .bottom-circle {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+              }
+            }
+            .mycard-shadow {
+              @include flexCenter(column);
+              align-items: flex-start;
+              justify-content: space-between;
+              position: absolute;
+              min-width: 150px;
+              min-height: 120px;
+              background: rgba(239, 232, 255, 0.95);
+            }
+          }
+          .three-dots {
+            margin: 0 auto;
+            .active {
+              background: #986efa !important;
+            }
+            .dot {
+              position: relative;
+              height: 8px;
+              width: 8px;
+              background: #e6dcfd;
+              margin: 2.5px;
+            }
+          }
+        }
+        .toppicks {
+          height: 100%;
+          justify-content: space-between;
+
+          .pick {
+            width: inherit;
+            padding-bottom: $padding;
+
+            .content {
+              flex: 1;
+              padding: 4px 8px;
+              font-family: "Mulish";
+              font-style: normal;
+              font-weight: 600;
+              font-size: 7.35px;
+              line-height: 9px;
+              text-align: justify;
+              color: #959595;
+
+              .title {
+                font-family: "Raleway";
+                font-style: normal;
+                font-weight: 700;
+                font-size: 8.575px;
+                line-height: 10px;
+                text-align: justify;
+                color: #272727;
+              }
+              .price {
+                justify-content: space-between;
+              }
+            }
+            cursor: pointer;
+            .arrow {
+              @include flexCenter(column);
+
+              img {
+                height: 8px;
+              }
+            }
+          }
+        }
+      }
+
+      .content-container {
+        width: min-content;
+        max-width: 672px;
+        max-height: 100%;
+        padding: $padding;
+        flex-direction: column;
+        gap: $gap;
+        .upper {
+          max-height: 50%;
+          gap: $gap;
+          .featured-sec {
+            height: 100%;
+            width: 50%;
+            .featured {
+              max-width: 100%;
+              min-height: 150px;
+              height: auto;
+              width: auto;
+              aspect-ratio: 221/126;
+              gap: $gap;
+              background-size: cover;
+              background-repeat: no-repeat;
+              flex-direction: column;
+              justify-content: space-between;
+              background-image: linear-gradient(
+                  180deg,
+                  rgba(196, 196, 196, 0) 0%,
+                  rgba(0, 0, 0, 0.61) 100%
+                ),
+                url(../images/ralph-kelly-z9fFOzL5L_Y-unsplash\.png);
+              .featured-row1 {
+                gap: 5px;
+              }
+              .featured-row2 {
+                justify-content: space-between;
+                align-items: center;
+
+                .details-container {
+                  font-family: "Raleway";
+                  font-style: normal;
+                  font-weight: 700;
+                  font-size: 11.025px;
+                  line-height: 13px;
+                  text-align: justify;
+
+                  .price-stars {
+                    font-family: "Mulish";
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 8.575px;
+                    line-height: 11px;
+                    text-align: justify;
+                    gap: 4px;
+                  }
+                }
+                .profile-icons {
+                  @include flexCenter(row);
+
+                  span {
+                    height: 20px;
+                    width: 20px;
+                    background: rgba(192, 192, 192, 0.6);
+                    border-radius: 50%;
+                    margin: 0 5px;
+                    @include flexCenter(column);
+
+                    .profile {
+                      border-radius: 50%;
+                    }
+                    .cam {
+                      height: 10px;
+                      width: auto;
+                    }
+                  }
+                }
+
+                p {
+                  font-family: "Mulish";
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: 7.35px;
+                  line-height: 9px;
+                }
+              }
+            }
+          }
+          .investment {
+            width: 50%;
+            flex-shrink: 1;
+            .card {
+              width: 100%;
+              padding: $padding;
+              flex: 1;
+              .investment-stats {
+                @include flexCenter(column);
+                justify-content: space-around;
+                align-items: flex-start;
+                max-width: 50%;
+                flex: 1;
+                .investment-container {
+                  @include flexCenter(row);
+                  .iconbox {
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 2.45px;
+                    margin-right: 8px;
+                    .icon {
+                      @include flexCenter(column);
+                      i {
+                        color: #ffffff;
+                        @include flexCenter(column);
+                        padding: 20%;
+                      }
+                    }
+                  }
+
+                  .content {
+                    @include flexCenter(column);
+                    align-items: flex-start;
+                    .title {
+                      font-family: "Raleway";
+                      font-style: normal;
+                      font-weight: 500;
+                      font-size: 8.575px;
+                      line-height: 10px;
+                      text-align: justify;
+                      flex: 1;
+                    }
+                    .amount {
+                      @include flexCenter(row);
+                      margin-top: 5px;
+                      i {
+                        font-size: 10px;
+                        padding: 2px;
+                      }
+                      p {
+                        font-family: "Mulish";
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 11.025px;
+                        line-height: 14px;
+                        text-align: justify;
+                      }
+                    }
+                  }
+                }
+              }
+              .investment-bars {
+                @include flexCenter(column);
+                position: relative;
+                width: 40%;
+
+                .guides {
+                  @include flexCenter(column);
+                  position: absolute;
+                  height: 100%;
+                  justify-content: space-between;
+
+                  .line {
+                    border: 0.8px solid $border-color;
+                    width: 66px;
+                  }
+                }
+
+                .rotation-box {
+                  background: transparent;
+                  transform: rotate(180deg);
+                  height: 100%;
+                  position: absolute;
+                  justify-content: center;
+
+                  .yellow {
+                    background: $yellow;
+                    height: 90%;
+                  }
+                  .green {
+                    background: $green;
+                    height: 80%;
+                  }
+                  .red {
+                    background: $red;
+                    height: 55%;
+                  }
+                  .prog-bar-full {
+                    margin: 0 8px;
+                    background: #f6f6fa;
+                    border-radius: 61.25px;
+                    .prog-bar-complete {
+                      border-radius: 61.25px;
+                      width: 5px;
+                    }
+                  }
+                }
+              }
+              .minmax {
+                @include flexCenter(column);
+                height: 100%;
+                justify-content: space-between;
+                p {
+                  font-family: "Raleway";
+                  font-style: normal;
+                  font-weight: 600;
+                  font-size: 7.35px;
+                  line-height: 9px;
+                  text-align: justify;
+                  color: #b5b5b5;
+                }
+              }
+            }
+          }
+        }
+        .lower {
+          flex: 1;
+          height: 50%;
+          gap: $gap;
+          .nft-owned {
+            min-width: 30%;
+            display: flex;
+            flex-direction: column;
+
+            .carousel {
+              grid-auto-flow: row;
+              grid-auto-rows: 25.4%;
+              height: 100%;
+              overflow-y: scroll;
+              border-radius: 8px;
+              box-shadow: 0px -11.6375px 79.625px rgba(0, 0, 0, 0.03);
+
+              &::-webkit-scrollbar {
+                display: none;
+              }
+
+              .carousel-nft {
+                height: min-content;
+              }
+            }
+          }
+          .portfolio {
+            display: flex;
+            flex-direction: column;
+            min-width: 60%;
+            .section-title {
+              .portfolio-buttons {
+                max-width: 100%;
+                padding-right: 8px;
+                justify-content: space-around;
+                max-height: 100%;
+                gap: 8px;
+                text-align: center;
+
+                .purple {
+                  text-align: center;
+                  vertical-align: middle;
+                  background: linear-gradient(
+                    68.24deg,
+                    #7942fb -3.47%,
+                    #b091f9 103.83%
+                  );
+                }
+              }
+            }
+            .carousel {
+              display: grid;
+              grid-auto-columns: 40%;
+              grid-auto-flow: column;
+              grid-gap: 16px;
+              overflow-y: hidden;
+              border-radius: 8px;
+              margin-bottom: $gap;
+              box-shadow: 0px -11.6375px 79.625px rgba(0, 0, 0, 0.03);
+              .nft-title {
+                font-family: "Raleway";
+                font-style: normal;
+                font-weight: 700;
+                font-size: 8.575px;
+                line-height: 10px;
+                text-align: justify;
+                color: #272727;
+                white-space: nowrap;
+              }
+
+              .card {
+                flex-direction: row-reverse;
+                justify-content: flex-end;
+                gap: 10px;
+                align-items: center;
+                .nft-content {
+                  align-content: center;
+                }
+                img {
+                  height: 40px;
+                  aspect-ratio: 1;
+                }
+              }
+              .price {
+                color: #b5b5b5;
+              }
+            }
+            .carousel::-webkit-scrollbar {
+              display: none;
+            }
+            .distros {
+              @extend .card;
+              flex-direction: column;
+              min-height: 50%;
+              grid-template-columns: 100%;
+              flex: 1;
+              .bg-graph {
+                width: 100%;
+                max-height: 90%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.total {
+  .iconbox {
+    background-color: $yellow;
+    box-shadow: 2.45px 4.9px 18.375px rgba(251, 177, 66, 0.35);
+  }
+
+  .content {
+    .amount {
+      i {
+        color: $yellow;
+      }
+      p {
+        color: $yellow;
+      }
+    }
+  }
+}
+
+.weekly {
+  padding: 8px 0;
+  .iconbox {
+    background-color: $green;
+    box-shadow: 2.45px 4.9px 18.375px rgba(79, 223, 177, 0.35);
+  }
+
+  .content {
+    .amount {
+      i {
+        color: $green;
+      }
+      p {
+        color: $green;
+      }
+    }
+  }
+}
+
+.expenses {
+  .iconbox {
+    background-color: $red;
+    box-shadow: 2.45px 4.9px 18.375px rgba(237, 91, 117, 0.35);
+  }
+
+  .content {
+    .amount {
+      i {
+        color: $red;
+      }
+      p {
+        color: $red;
+      }
+    }
+  }
+}
+
+.nft-content {
+  .nft-title {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 8.575px;
+    line-height: 10px;
+    color: #272727;
+  }
+  .price {
+    font-family: "Mulish";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 11.025px;
+    line-height: 14px;
+    text-align: justify;
+
+    color: #272727;
+  }
+}
+.nft-content + .graph-sm {
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  width: auto;
+}
